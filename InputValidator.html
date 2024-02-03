@@ -3,32 +3,23 @@
 <head>
     <title>Input Validator</title>
     <link rel="stylesheet" href="InputValidator.css">
-
 </head>
 <body>
-    <!--Emergency Fix-->
     <h1>Field Validation Demo</h1>
     <div id="app">
-
         <label>
             <p>Required field</p>
             <input type="text" v-model="inpAddress">
         </label>
         <p v-bind:class="myClass"><code>{{ feedbackText }}</code></p>
-
-
         <hr />
-
         <label>
             <p>Required field</p>
             <p>Numeric field</p>
             <input type="text" v-model="inpAddress2">
         </label>
-
         <p v-bind:class="myClass2"><code>{{ feedbackText2 }}</code></p>
-
         <hr />
-
         <label>
             <p>Required field</p>
             <p>Must have atleast 1 lowercase letter</p>
@@ -38,21 +29,15 @@
             <p>Must be atleast 10 characters</p>
             <input type="text" v-model="inpAddress3">
         </label>
-
         <p v-bind:class="myClass3"><code>{{ feedbackText3 }}</code></p>
-
         <hr />
-
         <label>
             <p>Required field</p>
             <p>Email field</p>
             <input type="text" v-model="inpAddress4">
         </label>
-
         <p v-bind:class="myClass4"><code>{{ feedbackText4 }}</code></p>
     </div>
-
-
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
         const app = Vue.createApp({
@@ -76,19 +61,6 @@
                 }
             },
             watch: {
-                //inpAddress(newVal, oldVal) {
-                //    if (!newVal.includes('@')) {
-                //        this.feedbackText = 'The e-mail address is NOT valid';
-                //        this.myClass = 'invalid';
-                //    }
-                //    else if (!oldVal.includes('@') && newVal.includes('@')) {
-                //        this.feedbackText = 'Perfect! You fixed it!';
-                //        this.myClass = 'valid'
-                //    }
-                //    else {
-                //        this.feedbackText = 'The e-mail address is valid :)';
-                //    }
-                //}
                 inpAddress(newVal, oldVal) {
                     if (newVal == "") {
                         this.feedbackText = 'This is a required field.';
@@ -179,6 +151,5 @@
         })
         app.mount('#app')
     </script>
-
 </body>
 </html>
